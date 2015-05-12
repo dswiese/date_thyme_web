@@ -26,7 +26,7 @@ module.exports = function(app) {
 		event.set('EventCategory', e.category);
 	  event.set('EventCity', e.city);
 		event.set('EventContact', e.contact);
-		event.set('EventDate2', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
+		event.set('EventStart', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
 		event.set('EventEnd', e.endDate.length > 0 ? new Date(e.endDate) : undefined);
 		event.set('EventDescription', e.description);
 		event.set('EventLocation', e.location);
