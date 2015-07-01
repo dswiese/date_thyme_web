@@ -20,8 +20,8 @@ module.exports = function(app) {
     parse.initialize(process.env.applicationId, process.env.javascriptId);
 
 		var e = req.req.body;
-		var Events = parse.Object.extend('Event');
-		var event = new Events();
+		var Event = parse.Object.extend('Event');
+		var event = new Event();
 
 		event.set('eventCategory', e.category);
 	  	event.set('eventCity', e.city);
