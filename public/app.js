@@ -1,4 +1,4 @@
-angular.module('events', [
+angular.module('event', [
 	'ngRoute',
 	'ui.bootstrap'
 ])
