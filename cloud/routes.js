@@ -29,12 +29,11 @@ module.exports = function(app) {
 		event.set('eventStart', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
 		event.set('eventEnd', e.endDate.length > 0 ? new Date(e.endDate) : undefined);
 		event.set('eventDescription', e.description);
-		event.set('eventLocation', e.location);
+		event.set('locationName', e.location);
 		event.set('eventName', e.name);
 		event.set('eventOrganizer', e.organizer);
 		event.set('eventPrice', e.price.length > 0 && isFinite(e.price) ? parseInt(e.price) : 0);
 		event.set('eventState', e.state.abbreviation);
-		event.set('eventTickets', e.tickets);
 		event.set('eventWebsite', e.website);
 
 		event.save().then(
