@@ -10,7 +10,6 @@ angular.module('event', [
 		$scope.event = {
 			category: '',
 			city: '',
-			contact: '',
 			startDate: '',
 			endDate: '',
 			description: '',
@@ -18,7 +17,6 @@ angular.module('event', [
 			name: '',
 			organizer: '',
 			state: '',
-			tickets: '',
 			website: '',
 			price: 0
 		}
