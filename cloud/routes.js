@@ -23,8 +23,8 @@ module.exports = function(app) {
 		var Events = parse.Object.extend('events');
 		var event = new Events();
 
-		event.set('EventCategory', e.category);
-	  event.set('EventCity', e.city);
+		event.set('EventCategory1', e.category);
+	  	event.set('EventCity', e.city);
 		event.set('EventContact', e.contact);
 		event.set('EventDate2', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
 		event.set('EventEnd', e.endDate.length > 0 ? new Date(e.endDate) : undefined);
