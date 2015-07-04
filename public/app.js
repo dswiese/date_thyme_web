@@ -8,13 +8,13 @@ angular.module('event', [
 	
 	$scope.init = function(){
 		$scope.event = {
-			name: '',
-			category: '',
+			eventName: '',
+			eventCategory: '',
 			startDate: '',
 			endDate: '',
-			description: '',
-			website: '',
-			price: 0	
+			eventDescription: '',
+			eventWebsite: '',
+			eventPrice: 0	
 			locationName: '',		
 			addressOne: '',
 			addressTwo: '',
