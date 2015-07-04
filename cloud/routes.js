@@ -23,16 +23,20 @@ module.exports = function(app) {
 		var Events = parse.Object.extend('events');
 		var event = new Events();
 
-		event.set('eventCategory', e.category);
-	  	event.set('eventCity', e.city);
+		event.set('eventName', e.name);
 		event.set('eventStart', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
 		event.set('eventEnd', e.endDate.length > 0 ? new Date(e.endDate) : undefined);
+		event.set('eventCategory', e.category);
 		event.set('eventDescription', e.description);
-		event.set('locationName', e.location);
-		event.set('eventName', e.name);
-		event.set('price', e.price.length > 0 && isFinite(e.price) ? parseInt(e.price) : 0);
-		event.set('state', e.state.abbreviation);
 		event.set('website', e.website);
+		event.set('locationName', e.location);
+		event.set('addressOne', e.addressOne);
+		event.set('addresTwo', e.addresTwo);
+	  	event.set('city', e.city);
+	  	event.set('state', e.state.abbreviation);
+	  	event.set('zip', e.city);
+		event.set('price', e.price.length > 0 && isFinite(e.price) ? parseInt(e.price) : 0);
+
 
 		event.save().then(
 			function(data) {
