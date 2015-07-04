@@ -12,17 +12,10 @@
   </style>
  </head>
  <body ng-app="event">
-    <div class="container">
-
+  <div class="container">
+    <div ng-controller="homeCtrl">
+      <h2>Event</h2>
       <div class="row">
-        <div class="col-md-3">
-          <label>Event Name</label>
-        </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="name" ng-model="event.name"/>
-        </div>
-      </div>
-       <div class="row">
         <div class="col-md-3">
           <label>Category</label>
         </div>
@@ -30,7 +23,36 @@
           <input class="form-control" type="text" name="category" ng-model="event.category"/>
         </div>
       </div>
-       <div class="row">
+      <div class="row">
+        <div class="col-md-3">
+          <label>City</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="city" ng-model="event.city"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>State</label>
+        </div>
+        <div class="col-md-3">
+          <select id="states"
+              class="form-control"
+              ng-model="event.state"
+              ng-options="state.name for state in states track by state.abbreviation">
+                <option style="display:none" value="">Select</option>
+              </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Contact</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="contact" ng-model="event.contact"/>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-3">
           <label>Start Date</label>
         </div>
@@ -70,7 +92,23 @@
                   </div>
         </div>
       </div>
-       <div class="row">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Event Name</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="name" ng-model="event.name"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Event Organizer</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="organizer" ng-model="event.organizer"/>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-3">
           <label>Description</label>
         </div>
@@ -86,14 +124,6 @@
           <input class="form-control" type="text" name="website" ng-model="event.website"/>
         </div>
       </div>
-       <div class="row">
-        <div class="col-md-3">
-          <label>Price</label>
-        </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
-        </div>
-      </div>
       <div class="row">
         <div class="col-md-3">
           <label>Location Name</label>
@@ -103,6 +133,15 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-md-3">
+          <label>Price</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
+        </div>
+      </div
+
+<div class="row">
         <div class="col-md-3">
           <label>Address One</label>
         </div>
@@ -120,8 +159,21 @@
         </div>
       </div>
 
+<div class="row">
+        <div class="col-md-3">
+          <label>Price</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
+        </div>
+      </div>
 
-       <div class="row">
+
+
+
+
+
+      <div class="row">
         <div class="col-md-3">
         <input type="submit" class="btn-primary" ng-click="enterEvent()" />
         </div>
@@ -139,8 +191,3 @@
   <script type="text/javascript" src="/public/states.js"></script>
  </body>  
  </html>
-
-
-
-
-
