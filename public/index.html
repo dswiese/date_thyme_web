@@ -4,17 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
-  <title>New Event</title>
+  <title>Events</title>
   <style type="text/css">
   .row {
     margin: 5px 0 5px 0;
   }
   </style>
  </head>
- <body ng-app="event">
+ <body ng-app="events">
   <div class="container">
     <div ng-controller="homeCtrl">
-      <h2>Event</h2>
+      <h2>Events</h2>
       <div class="row">
         <div class="col-md-3">
           <label>Category</label>
@@ -126,7 +126,7 @@
       </div>
       <div class="row">
         <div class="col-md-3">
-          <label>Location Name</label>
+          <label>Location</label>
         </div>
         <div class="col-md-3">
           <input class="form-control" type="text" name="location" ng-model="event.location"/>
@@ -134,32 +134,14 @@
       </div>
       <div class="row">
         <div class="col-md-3">
-          <label>Price</label>
+          <label>Tickets</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
-        </div>
-      </div
-
-<div class="row">
-        <div class="col-md-3">
-          <label>Address One</label>
-        </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
+          <input class="form-control" type="text" name="tickets" ng-model="event.tickets"/>
         </div>
       </div>
 
-<div class="row">
-        <div class="col-md-3">
-          <label>Address Two</label>
-        </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
-        </div>
-      </div>
-
-<div class="row">
+      <div class="row">
         <div class="col-md-3">
           <label>Price</label>
         </div>
@@ -167,11 +149,6 @@
           <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
         </div>
       </div>
-
-
-
-
-
 
       <div class="row">
         <div class="col-md-3">

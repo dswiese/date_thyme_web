@@ -20,22 +20,22 @@ module.exports = function(app) {
     parse.initialize(process.env.applicationId, process.env.javascriptId);
 
 		var e = req.req.body;
-		var Event = parse.Object.extend('Event');
-		var event = new Event();
+		var Events = parse.Object.extend('events');
+		var event = new Events();
 
-		event.set('eventName', e.eventName);
-		event.set('eventCategory', e.eventCategory);
-		event.set('eventStart', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
-		event.set('eventEnd', e.endDate.length > 0 ? new Date(e.endDate) : undefined);
-		event.set('eventDescription', e.eventDescription);
-		event.set('eventWebsite', e.eventWebsite);
-		event.set('eventPrice', e.eventPrice.length > 0 && isFinite(e.price) ? parseInt(e.price) : 0);
-		event.set('locationName', e.locationName);
-		event.set('addressOne'), e.addressOne
-		event.set('addressTwo'), e.addressTwo
-		event.set('city', e.city);
-		event.set('state', e.state.abbreviation);
-		event.set('zip', e.zip);
+		event.set('EventCategory', e.category);
+	  event.set('EventCity', e.city);
+		event.set('EventContact', e.contact);
+		event.set('EventDate2', e.startDate.length > 0 ? new Date(e.startDate) : undefined);
+		event.set('EventEnd', e.endDate.length > 0 ? new Date(e.endDate) : undefined);
+		event.set('EventDescription', e.description);
+		event.set('EventLocation', e.location);
+		event.set('EventName', e.name);
+		event.set('EventOrganizer', e.organizer);
+		event.set('EventPrice', e.price.length > 0 && isFinite(e.price) ? parseInt(e.price) : 0);
+		event.set('EventState', e.state.abbreviation);
+		event.set('EventTickets', e.tickets);
+		event.set('EventWebsite', e.website);
 
 		event.save().then(
 			function(data) {

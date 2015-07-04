@@ -1,4 +1,4 @@
-angular.module('event', [
+angular.module('events', [
 	'ngRoute',
 	'ui.bootstrap'
 ])
@@ -8,19 +8,19 @@ angular.module('event', [
 	
 	$scope.init = function(){
 		$scope.event = {
-			eventName: '',
-			eventCategory: '',
+			category: '',
+			city: '',
+			contact: '',
 			startDate: '',
 			endDate: '',
-			eventDescription: '',
-			eventWebsite: '',
-			eventPrice: 0	
-			locationName: '',		
-			addressOne: '',
-			addressTwo: '',
-			city: '',
+			description: '',
+			location: '',
+			name: '',
+			organizer: '',
 			state: '',
-			zip: '',
+			tickets: '',
+			website: '',
+			price: 0
 		}
 	};
 
