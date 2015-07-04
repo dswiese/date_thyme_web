@@ -8,17 +8,19 @@ angular.module('event', [
 	
 	$scope.init = function(){
 		$scope.event = {
+			name: '',
 			category: '',
-			city: '',
 			startDate: '',
 			endDate: '',
 			description: '',
-			location: '',
-			name: '',
-			organizer: '',
-			state: '',
 			website: '',
-			price: 0
+			price: 0	
+			locationName: '',		
+			addressOne: '',
+			addressTwo: '',
+			city: '',
+			state: '',
+			zip: '',
 		}
 	};
 
