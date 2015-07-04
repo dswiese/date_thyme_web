@@ -31,7 +31,7 @@ module.exports = function(app) {
 		event.set('website', e.website);
 		event.set('locationName', e.location);
 		event.set('addressOne', e.addressOne);
-		event.set('addresTwo', e.addresTwo);
+		event.set('addressTwo', e.addressTwo);
 	  	event.set('city', e.city);
 	  	event.set('state', e.state.abbreviation);
 	  	event.set('zip', e.city);

@@ -17,39 +17,10 @@
       <h2>Events</h2>
       <div class="row">
         <div class="col-md-3">
-          <label>Category</label>
-        </div>
-        <div class="col-md-3">  
-          <input class="form-control" type="text" name="category" ng-model="event.category"/>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <label>City</label>
+          <label>Event Name</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" type="text" name="city" ng-model="event.city"/>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <label>State</label>
-        </div>
-        <div class="col-md-3">
-          <select id="states"
-              class="form-control"
-              ng-model="event.state"
-              ng-options="state.name for state in states track by state.abbreviation">
-                <option style="display:none" value="">Select</option>
-              </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <label>Contact</label>
-        </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="contact" ng-model="event.contact"/>
+          <input class="form-control" type="text" name="name" ng-model="event.name"/>
         </div>
       </div>
       <div class="row">
@@ -94,18 +65,10 @@
       </div>
       <div class="row">
         <div class="col-md-3">
-          <label>Event Name</label>
+          <label>Category</label>
         </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="name" ng-model="event.name"/>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3">
-          <label>Event Organizer</label>
-        </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="organizer" ng-model="event.organizer"/>
+        <div class="col-md-3">  
+          <input class="form-control" type="text" name="category" ng-model="event.category"/>
         </div>
       </div>
       <div class="row">
@@ -134,13 +97,48 @@
       </div>
       <div class="row">
         <div class="col-md-3">
-          <label>Tickets</label>
+          <label>Address One</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" type="text" name="tickets" ng-model="event.tickets"/>
+          <input class="form-control" type="text" name="addressOne" ng-model="event.addressOne"/>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-md-3">
+          <label>Address Two</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="addressTwo" ng-model="event.addressTwo"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>City</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="city" ng-model="event.city"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>State</label>
+        </div>
+        <div class="col-md-3">
+          <select id="states"
+              class="form-control"
+              ng-model="event.state"
+              ng-options="state.name for state in states track by state.abbreviation">
+                <option style="display:none" value="">Select</option>
+              </select>
+        </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Zip</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="zip" ng-model="event.zip"/>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-3">
           <label>Price</label>
@@ -149,7 +147,6 @@
           <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
         </div>
       </div>
-
       <div class="row">
         <div class="col-md-3">
         <input type="submit" class="btn-primary" ng-click="enterEvent()" />
