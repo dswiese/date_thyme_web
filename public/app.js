@@ -18,7 +18,7 @@ angular.module('events', [
 			addressOne: '',
 			addressTwo: '',
 			city: '',
-			state: '',
+			locationState: '',
 			zip: '',			
 			price: 0
 		}
