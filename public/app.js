@@ -23,6 +23,7 @@ angular.module('events', [
       zip: '',
       price: 0
     }
+    tinymce.init({selector:'textarea', menubar: false, height: 300 });
   };
 
   $scope.init();
@@ -37,11 +38,12 @@ angular.module('events', [
   $scope.enterEvent = function() {
     $scope.msg = '';
     var e = $scope.event;
-
+    e.description = tinyMCE.activeEditor.getContent();
     $http({method: 'POST', url: 'api/event', data: e })
     .success(function(data, status){
       if(data.success) {
         window.scrollTo(0,0);
+        tinymce.get('tinymce2').setContent('');
         $scope.init();
       }
     })

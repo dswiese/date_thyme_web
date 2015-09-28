@@ -76,7 +76,7 @@
           <label>Description</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" type="text" name="description" ng-model="event.description"/>
+          <textarea id="tinymce2" class="form-control description" type="textarea" name="description" ng-model="event.description"/></textarea>
         </div>
       </div>
       <div class="row">
@@ -172,5 +172,6 @@
 
   <script type="text/javascript" src="/public/app.js"></script>
   <script type="text/javascript" src="/public/states.js"></script>
+  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
  </body>
  </html>
