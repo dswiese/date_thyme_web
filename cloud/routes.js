@@ -41,7 +41,7 @@ module.exports = function(app) {
 
     event.save().then(
       function(data) {
-        res.res.json({success: e});
+        res.res.json({success: true});
       },
       function(error){
         res.res.json({error: error});
