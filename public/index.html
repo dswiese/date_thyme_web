@@ -29,9 +29,9 @@
         </div>
         <div class="col-md-3">
           <div class="input-group">
-            <input  type="text" 
-                class="form-control" 
-                datepicker-popup="MM.dd.yyyy" 
+            <input  type="text"
+                class="form-control"
+                datepicker-popup="MM.dd.yyyy"
                 ng-model="event.startDate"
                 is-open="start"
                 close-text="Close"
@@ -39,7 +39,7 @@
 
             <span class="input-group-btn">
                       <button type="button" class="btn btn-default" ng-click="open($event, 'start')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>           
+                    </span>
           </div>
         </div>
       </div>
@@ -49,12 +49,12 @@
         </div>
         <div class="col-md-3">
           <div class="input-group">
-            <input  type="text" 
-              class="form-control" 
-              datepicker-popup="MM.dd.yyyy" 
+            <input  type="text"
+              class="form-control"
+              datepicker-popup="MM.dd.yyyy"
               ng-model="event.endDate"
               is-open="end"
-              close-text="Close" 
+              close-text="Close"
               disabled="disabled" />
 
             <span class="input-group-btn">
@@ -67,7 +67,7 @@
         <div class="col-md-3">
           <label>Category</label>
         </div>
-        <div class="col-md-3">  
+        <div class="col-md-3">
           <input class="form-control" type="text" name="category" ng-model="event.category"/>
         </div>
       </div>
@@ -76,7 +76,15 @@
           <label>Description</label>
         </div>
         <div class="col-md-3">
-          <input class="form-control" type="text" name="description" ng-model="event.description"/>
+          <textarea id="tinymce2" class="form-control description" type="textarea" name="description" ng-model="event.description"/></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label>Organizer</label>
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" type="text" name="organizer" ng-model="event.organizer"/>
         </div>
       </div>
       <div class="row">
@@ -155,7 +163,7 @@
       </div>
     </div>
   </div>
-  
+
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
@@ -164,5 +172,6 @@
 
   <script type="text/javascript" src="/public/app.js"></script>
   <script type="text/javascript" src="/public/states.js"></script>
- </body>  
+  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+ </body>
  </html>
