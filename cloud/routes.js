@@ -33,7 +33,7 @@ module.exports = function(app) {
 		event.set('addressOne', e.addressOne);
 		event.set('addressTwo', e.addressTwo);
 	  	event.set('city', e.city);
-	  	event.set('locationState', e.state.abbreviation);
+	  	event.set('State', e.state.abbreviation);
 	  	event.set('zip', e.zip);
 		event.set('price', e.price.length > 0 && isFinite(e.price) ? parseInt(e.price) : 0);
 
