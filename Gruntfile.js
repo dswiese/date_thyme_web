@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 
 		githooks: {
 			all: {
-				'pre-commit': 'clean'
+				'pre-commit': 'commit'
 			}
 		},
 
@@ -141,5 +141,5 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('default', ['build', 'concurrent']);
 	grunt.registerTask('build', ['concat', 'concat_css', 'uglify', 'cssmin', 'jshint', 'bootlint']);
-	grunt.registerTask('clean', ['jsbeautifier', 'build']);
+	grunt.registerTask('commit', ['jsbeautifier', 'build']);
 };
