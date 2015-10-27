@@ -72,13 +72,13 @@ module.exports = function(grunt) {
 
 		jsbeautifier: {
 			"default": {
-				src: ['public/**/*.js', 'app/**/*.js'],
+				src: ['public/app/**/*.js', 'app/**/*.js'],
 				options: {
 					
 				}
 			},
 			"git-pre-commit": { 
-				src: ['public/**/*.js', 'app/**/*.js'],
+				src: ['public/app/**/*.js', 'app/**/*.js'],
 				options : {
 					mode:"VERIFY_ONLY"
 				}

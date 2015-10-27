@@ -1,75 +1,78 @@
 angular.module('events', [
-	'ngRoute',
-	'ui.bootstrap',
-	'ui.tinymce',
-	'flash'
+    'ngRoute',
+    'ui.bootstrap',
+    'ui.tinymce',
+    'flash'
 ])
 
-.controller('homeCtrl', ['$scope', '$http', 'flash', function($scope, $http, flash){
-	$scope.states = usStates;
-	
-	$scope.tinymceOptions = {
-        setup : function(ed) {
+.controller('homeCtrl', ['$scope', '$http', 'flash', function($scope, $http, flash) {
+    $scope.states = usStates;
+
+    $scope.tinymceOptions = {
+        setup: function(ed) {
             ed.on('keyup', function(e) {
-              $scope.event.description = ed.getContent();
+                $scope.event.description = ed.getContent();
             });
-        }  
+        }
     };
 
-	$scope.init = function(){
-		$scope.event = {
-			name: '',
-			startDate: '',
-			endDate: '',
-			category: '',
-			description: '',
-			website: '',
-			location: '',
-			addressOne: '',
-			addressTwo: '',
-			city: '',
-			state: '',
-			zip: '',			
-			price: 0
-		};
-	};
+    $scope.init = function() {
+        $scope.event = {
+            name: '',
+            startDate: '',
+            endDate: '',
+            category: '',
+            description: '',
+            website: '',
+            location: '',
+            addressOne: '',
+            addressTwo: '',
+            city: '',
+            state: '',
+            zip: '',
+            price: 0
+        };
+    };
 
-	$scope.init();
+    $scope.init();
 
-	$scope.open = function($event, opened) {
-		$event.preventDefault();
-	    $event.stopPropagation();
+    $scope.open = function($event, opened) {
+        $event.preventDefault();
+        $event.stopPropagation();
 
-	    $scope[opened] = true;
-  	};
+        $scope[opened] = true;
+    };
 
-  	$scope.enterEvent = function() {
-  		$scope.msg = '';
-  		var e = $scope.event;
+    $scope.enterEvent = function() {
+        $scope.msg = '';
+        var e = $scope.event;
 
-		$http({method: 'POST', url: 'api/event', data: e })
-			.success(function(data, status){
-				if(data.success) {
-					window.scrollTo(0,0);
-					flash('text-success', 'Event has been added.');
-					$scope.init();
-				}
-			})
-			.error(function(data, status){
-				flash('text-danger', 'Event could not be added.');
-			});
-  	};
+        $http({
+                method: 'POST',
+                url: 'api/event',
+                data: e
+            })
+            .success(function(data, status) {
+                if (data.success) {
+                    window.scrollTo(0, 0);
+                    flash('text-success', 'Event has been added.');
+                    $scope.init();
+                }
+            })
+            .error(function(data, status) {
+                flash('text-danger', 'Event could not be added.');
+            });
+    };
 
-  	$scope.checkNumber = function(evt) {
-  		var theEvent = evt || window.event;
-		var key = theEvent.keyCode || theEvent.which;
-		key = String.fromCharCode( key );
-		var regex = /[0-9]|\./;
-		if( !regex.test(key) ) {
-		theEvent.returnValue = false;
-		if(theEvent.preventDefault) theEvent.preventDefault();
-		}
-  	};
+    $scope.checkNumber = function(evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\./;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+        }
+    };
 
 }]);
-
