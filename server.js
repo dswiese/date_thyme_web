@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require('method-override');
 //var config = require('./private/config.json');
 
-var port = process.env.PORT || config.port || 8080;
+var port = process.env.PORT || 8080;
 
 // get all data/stuff of the body (POST) parameters
 app.use(bodyParser.json({ limit: '50mb' })); // parse application/json 
