@@ -1,11 +1,11 @@
-module.exports = function(app, config) {
+module.exports = function(app) {
 
     var path = require('path');
     var parse = require('parse/node').Parse;
 
     app.post('/api/event', function(req, res) {
 
-        parse.initialize(process.env.applicationId || config.parse.applicationId, process.env.javascriptId || config.parse.javascriptId);
+        parse.initialize(process.env.applicationId, process.env.javascriptId);
 
         var e = req.body;
         var Events = parse.Object.extend('Event');

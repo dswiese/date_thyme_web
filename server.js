@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var methodOverride = require('method-override');
-var config = require('./private/config.json');
+//var config = require('./private/config.json');
 
 var port = process.env.PORT || config.port || 8080;
 
@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 
 
 // routes ==================================================
-require('./app/routes')(app, config); // configure our routes
+require('./app/routes')(app); // configure our routes
 
 // start app ===============================================
 
