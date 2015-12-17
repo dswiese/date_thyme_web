@@ -2,8 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="/css/app.css" />
   <title>Events</title>
   <style type="text/css">
   .row {
@@ -15,11 +14,12 @@
   <div class="container">
     <div ng-controller="homeCtrl">
       <h2>Events</h2>
-      <div class="row">
+      <div data-flash-messages="" data-ng-show="messages"></div>
+      <div class="row"> 
         <div class="col-md-3">
           <label>Event Name</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="name" ng-model="event.name"/>
         </div>
       </div>
@@ -27,7 +27,7 @@
         <div class="col-md-3">
           <label>Start Date</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <div class="input-group">
             <input  type="text" 
                 class="form-control" 
@@ -47,7 +47,7 @@
         <div class="col-md-3">
           <label>End Date</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <div class="input-group">
             <input  type="text" 
               class="form-control" 
@@ -67,7 +67,7 @@
         <div class="col-md-3">
           <label>Category</label>
         </div>
-        <div class="col-md-3">  
+        <div class="col-md-6">  
           <input class="form-control" type="text" name="category" ng-model="event.category"/>
         </div>
       </div>
@@ -75,15 +75,18 @@
         <div class="col-md-3">
           <label>Description</label>
         </div>
-        <div class="col-md-3">
-          <input class="form-control" type="text" name="description" ng-model="event.description"/>
+        <div class="col-md-6">
+          <div ng-model="event.description" class="form-control" id="tinymce-content" ui-tinymce="tinymceOptions" name="content">
+            {{event.description}}
+          </div>
+          <!-- <textarea class="form-control" name="description" onkeypress="textSave(this, event.description)" data-ng-model="event.description"></textarea> -->
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
           <label>Website</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="website" ng-model="event.website"/>
         </div>
       </div>
@@ -91,7 +94,7 @@
         <div class="col-md-3">
           <label>Location</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="location" ng-model="event.location"/>
         </div>
       </div>
@@ -99,7 +102,7 @@
         <div class="col-md-3">
           <label>Address One</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="addressOne" ng-model="event.addressOne"/>
         </div>
       </div>
@@ -107,7 +110,7 @@
         <div class="col-md-3">
           <label>Address Two</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="addressTwo" ng-model="event.addressTwo"/>
         </div>
       </div>
@@ -115,7 +118,7 @@
         <div class="col-md-3">
           <label>City</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="city" ng-model="event.city"/>
         </div>
       </div>
@@ -123,7 +126,7 @@
         <div class="col-md-3">
           <label>State</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <select id="states"
               class="form-control"
               ng-model="event.state"
@@ -136,7 +139,7 @@
         <div class="col-md-3">
           <label>Zip</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="zip" ng-model="event.zip"/>
         </div>
       </div>
@@ -144,7 +147,7 @@
         <div class="col-md-3">
           <label>Price</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <input class="form-control" type="text" name="price" ng-model="event.price" ng-keypress="checkNumber($event)"/>
         </div>
       </div>
@@ -155,14 +158,8 @@
       </div>
     </div>
   </div>
-  
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
-  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
 
-  <script type="text/javascript" src="/public/app.js"></script>
-  <script type="text/javascript" src="/public/states.js"></script>
+  <script type="text/javascript" src="/app.min.js"></script>
+  <script>tinymce.init({selector:'textarea'});</script>
  </body>  
  </html>
