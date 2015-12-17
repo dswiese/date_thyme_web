@@ -115,11 +115,11 @@ module.exports = function(grunt) {
         		tasks: ['concat_css', 'cssmin']
         	},
         	js: {
-        		files: ['public/app/**.js', 'gruntfile.js'],
+        		files: ['public/app/**/*.js', 'gruntfile.js'],
         		tasks: ['jshint', 'concat', 'uglify']
         	},
         	html: {
-        		files: ['public/app/**.html', 'public/index.html'],
+        		files: ['public/app/**/*.html', 'public/index.html'],
         		tasks: ['bootlint']
         	}
 		},
